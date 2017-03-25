@@ -1,0 +1,13 @@
+config: test
+
+hardware_pins:
+  motor:
+    left: 19
+    forward: 16
+    backward: 18
+    right: 21
+    straight: 22
+    steering: 23
+  range_sensor:
+    trig: 3
+    echo: 5
