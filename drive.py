@@ -31,7 +31,7 @@ def counter_clockwise():
 clockwise()
 
 while True:
-	cmd = raw_input("Command, f/r 0..9, E.g. f5 :")
+	cmd = input("Command, f/r 0..9, E.g. f5 :")
 	direction = cmd[0]
 	if direction == "f":
 		clockwise()
