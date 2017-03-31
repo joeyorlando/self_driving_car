@@ -1,41 +1,31 @@
-import RPi.GPIO as io
-io.setmode(io.BCM)
+import RPi.GPIO as GPIO
+from time import sleep
 
-in1_pin = 4
-in2_pin = 17
+GPIO.setmode(GPIO.BOARD)
 
-io.setup(in1_pin, io.OUT)
-io.setup(in2_pin, io.OUT)
+Motor1 = 16    # Input Pin
+Motor2 = 18    # Input Pin
+Motor3 = 22    # Enable Pin
 
-def set(property, value):
-	try:
-		f = open("/sys/class/rpi-pwm/pwm0/" + property, 'w')
-		f.write(value)
-		f.close()
-	except:
-		print("Error writing to: " + property + " value: " + value)
+GPIO.setup(Motor1,GPIO.OUT)
+GPIO.setup(Motor2,GPIO.OUT)
+GPIO.setup(Motor3,GPIO.OUT)
 
-set("delayed", "0")
-set("mode", "pwm")
-set("frequency", "500")
-set("active", "1")
+print("FORWARD MOTION")
+GPIO.output(Motor1,GPIO.HIGH)
+GPIO.output(Motor2,GPIO.LOW)
+GPIO.output(Motor3,GPIO.HIGH)
 
-def clockwise():
-	io.output(in1_pin, True)
-	io.output(in2_pin, False)
+sleep(3)
 
-def counter_clockwise():
-	io.output(in1_pin, False)
-	io.output(in2_pin, True)
+print("BACKWARD MOTION")
+GPIO.output(Motor1,GPIO.LOW)
+GPIO.output(Motor2,GPIO.HIGH)
+GPIO.output(Motor3,GPIO.HIGH)
 
-clockwise()
+sleep(3)
 
-while True:
-	cmd = input("Command, f/r 0..9, E.g. f5 :")
-	direction = cmd[0]
-	if direction == "f":
-		clockwise()
-	else:
-		counter_clockwise()
-	speed = int(cmd[1]) * 11
-	set("duty", str(speed))
+print("STOP")
+GPIO.output(Motor3,GPIO.LOW)
+
+GPIO.cleanup()
