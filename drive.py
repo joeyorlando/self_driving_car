@@ -11,14 +11,14 @@ GPIO.setup(Motor1,GPIO.OUT)
 GPIO.setup(Motor2,GPIO.OUT)
 GPIO.setup(Motor3,GPIO.OUT)
 
-print("FORWARD MOTION")
+print("BACKWARD MOTION")
 GPIO.output(Motor1,GPIO.HIGH)
 GPIO.output(Motor2,GPIO.LOW)
 GPIO.output(Motor3,GPIO.HIGH)
 
 sleep(3)
 
-print("BACKWARD MOTION")
+print("FORWARD MOTION")
 GPIO.output(Motor1,GPIO.LOW)
 GPIO.output(Motor2,GPIO.HIGH)
 GPIO.output(Motor3,GPIO.HIGH)
