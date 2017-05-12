@@ -1,31 +1,17 @@
 import RPi.GPIO as GPIO
 from time import sleep
+from hardware.car import Car
 
-GPIO.setmode(GPIO.BOARD)
-
-Motor1 = 29    # Input Pin
-Motor2 = 31    # Input Pin
-Motor3 = 33    # Enable Pin
-
-GPIO.setup(Motor1,GPIO.OUT)
-GPIO.setup(Motor2,GPIO.OUT)
-GPIO.setup(Motor3,GPIO.OUT)
-
-print("BACKWARD MOTION")
-GPIO.output(Motor1,GPIO.HIGH)
-GPIO.output(Motor2,GPIO.LOW)
-GPIO.output(Motor3,GPIO.HIGH)
-
-sleep(3)
+car = Car()
 
 print("FORWARD MOTION")
-GPIO.output(Motor1,GPIO.LOW)
-GPIO.output(Motor2,GPIO.HIGH)
-GPIO.output(Motor3,GPIO.HIGH)
+car.drive_forward()
+sleep(1)
 
-sleep(3)
+print("BACKWARD MOTION")
+car.drive_backward()
+sleep(1)
 
 print("STOP")
-GPIO.output(Motor3,GPIO.LOW)
-
+car.stop()
 GPIO.cleanup()
