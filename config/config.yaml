@@ -1,13 +1,21 @@
 config: test
 
 hardware_pins:
-  motor:
-    left: 19
-    forward: 16
-    backward: 18
-    right: 21
-    straight: 22
-    steering: 23
+  rear_motor:
+    enable: 22
+    input1: 18
+    input2: 16
+  front_motor:
+    enable: 33
+    input1: 31
+    input2: 29
+  # motor:
+  #   left: 19
+  #   forward: 16
+  #   backward: 18
+  #   right: 21
+  #   straight: 22
+  #   steering: 23
   range_sensor:
     trig: 3
     echo: 5

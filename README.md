@@ -35,8 +35,8 @@ Below is the list of parts that I used to make this project happen.
 
 ## To-do list
 - [x] Get materials
-- [x] Control DC motor from Pi
-- [ ] Control servo from Pi
+- [x] Control rear DC motor from Pi
+- [ ] Control front DC motor from Pi
 - [ ] Control HC-SR04 from Pi
 - [x] Create schematic
 - [ ] Stream video to Mac from Pi camera

@@ -3,9 +3,9 @@ from time import sleep
 
 GPIO.setmode(GPIO.BOARD)
 
-Motor1 = 16    # Input Pin
-Motor2 = 18    # Input Pin
-Motor3 = 22    # Enable Pin
+Motor1 = 29    # Input Pin
+Motor2 = 31    # Input Pin
+Motor3 = 33    # Enable Pin
 
 GPIO.setup(Motor1,GPIO.OUT)
 GPIO.setup(Motor2,GPIO.OUT)
