@@ -7,9 +7,9 @@ class Motor:
 
 
 	def __init__(self, motor_type):
-		enable = config["hardware_pins"][motor_type]["enable"]
-		pin_backward = config["hardware_pins"][motor_type]["input1"]
-		pin_forward = config["hardware_pins"][motor_type]["input2"]
+		self.enable = config["hardware_pins"][motor_type]["enable"]
+		self.pin_backward = config["hardware_pins"][motor_type]["input1"]
+		self.pin_forward = config["hardware_pins"][motor_type]["input2"]
 
 		# pin_forward = config["hardware_pins"]["motor"]["forward"]
 		# pin_backward = config["hardware_pins"]["motor"]["backward"]
@@ -18,17 +18,17 @@ class Motor:
 		# pin_right = config["hardware_pins"]["motor"]["right"]
 		# pin_left = config["hardware_pins"]["motor"]["left"]
 
-		for pin in [enable, pin_backward, pin_forward]:
+		for pin in [self.enable, self.pin_backward, self.pin_forward]:
 			GPIO.setup(pin, GPIO.OUT)
 
 		# Pulse width modulation
-		self.pwm_forward = GPIO.PWM(pin_forward, 100)
-		self.pwm_backward = GPIO.PWM(pin_backward, 100)
+		self.pwm_forward = GPIO.PWM(self.pin_forward, 100)
+		self.pwm_backward = GPIO.PWM(self.pin_backward, 100)
 
 		for pwm in [self.pwm_forward, self.pwm_backward]:
 			pwm.start(0)
 
-		GPIO.output(enable, GPIO.HIGH)
+		GPIO.output(self.enable, GPIO.HIGH)
 
 
 	def forward(self, speed):
