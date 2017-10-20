@@ -6,11 +6,11 @@ car = Car()
 
 print("FORWARD MOTION")
 car.drive_forward()
-sleep(1)
+sleep(0.5)
 
 print("BACKWARD MOTION")
 car.drive_backward()
-sleep(1)
+sleep(0.5)
 
 print("STOP")
 car.stop()
