@@ -1,7 +1,7 @@
 import RPi.GPIO as GPIO
 from hardware.car.motor import Motor
 from hardware.range_sensor import RangeSensor
-from hardware.camera import Camera
+# from hardware.camera import Camera
 
 GPIO.setmode(GPIO.BOARD)
 
@@ -13,7 +13,7 @@ class Car:
 		self.rear_motor = Motor(motor_type="rear_motor")
 		self.front_motor = Motor(motor_type="front_motor")
 		self.range_sensor = RangeSensor()
-		self.camera = Camera()
+		# self.camera = Camera()
 
 
 	def drive_forward(self):
