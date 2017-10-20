@@ -30,15 +30,18 @@ class Motor:
 
 		GPIO.output(enable, GPIO.HIGH)
 
-	#
-	# def forward(self, speed):
-	# 	"""
-	# 		pinForward is the forward Pin, so we change its duty cycle according to speed
-	# 	"""
-	# 	self.pwm_backward.ChangeDutyCycle(0)
-	# 	self.pwm_forward.ChangeDutyCycle(speed)
-	#
-	#
+
+	def forward(self, speed):
+		"""
+			pinForward is the forward Pin, so we change its duty cycle according to speed
+		"""
+		GPIO.output(self.pin_backward, GPIO.HIGH)
+		GPIO.output(self.pin_forward, GPIO.LOW)
+		GPIO.output(self.enable, GPIO.HIGH)
+		# self.pwm_backward.ChangeDutyCycle(0)
+		# self.pwm_forward.ChangeDutyCycle(speed)
+
+
 	# def forward_left(self, speed):
 	# 	"""
 	# 		pinForward is the forward Pin, so we change its duty cycle according to speed
@@ -57,16 +60,19 @@ class Motor:
 	# 	self.pwm_forward.ChangeDutyCycle(speed)
 	# 	self.pwm_left.ChangeDutyCycle(0)
 	# 	self.pwm_right.ChangeDutyCycle(100)
-	#
-	#
-	# def backward(self, speed):
-	# 	"""
-	# 		pinBackward is the forward Pin, so we change its duty cycle according to speed
-	# 	"""
-	# 	self.pwm_forward.ChangeDutyCycle(0)
-	# 	self.pwm_backward.ChangeDutyCycle(speed)
-	#
-	#
+
+
+	def backward(self, speed):
+		"""
+			pinBackward is the forward Pin, so we change its duty cycle according to speed
+		"""
+		GPIO.output(self.pin_forward, GPIO.LOW)
+		GPIO.output(self.pin_backward, GPIO.HIGH)
+		GPIO.output(self.enable, GPIO.HIGH)
+		# self.pwm_forward.ChangeDutyCycle(0)
+		# self.pwm_backward.ChangeDutyCycle(speed)
+
+
 	# def left(self, speed):
 	# 	"""
 	# 		pinForward is the forward Pin, so we change its duty cycle according to speed
@@ -83,9 +89,10 @@ class Motor:
 	# 	self.pwm_right.ChangeDutyCycle(speed)
 	#
 	#
-	# def stop(self):
-	# 	""" Set the duty cycle of both control pins to zero to stop the motor. """
-	# 	self.pwm_forward.ChangeDutyCycle(0)
-	# 	self.pwm_backward.ChangeDutyCycle(0)
-	# 	self.pwm_left.ChangeDutyCycle(0)
-	# 	self.pwm_right.ChangeDutyCycle(0)
+	def stop(self):
+		""" Set the duty cycle of both control pins to zero to stop the motor. """
+		GPIO.output(self.enable, GPIO.LOW)
+		# self.pwm_forward.ChangeDutyCycle(0)
+		# self.pwm_backward.ChangeDutyCycle(0)
+		# self.pwm_left.ChangeDutyCycle(0)
+		# self.pwm_right.ChangeDutyCycle(0)

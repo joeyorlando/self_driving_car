@@ -17,16 +17,12 @@ class Car:
 
 
 	def drive_forward(self):
-		GPIO.output(self.rear_motor.input2, GPIO.HIGH)
-		GPIO.output(self.rear_motor.input1, GPIO.LOW)
-		GPIO.output(self.rear_motor.enable, GPIO.HIGH)
+		self.rear_motor.forward()
 
 
 	def drive_backward(self):
-		GPIO.output(self.rear_motor.input2, GPIO.LOW)
-		GPIO.output(self.rear_motor.input1, GPIO.HIGH)
-		GPIO.output(self.rear_motor.enable, GPIO.HIGH)
+		self.rear_motor.backward()
 
 
 	def stop(self):
-		GPIO.output(self.rear_motor.enable, GPIO.LOW)
+		self.rear_motor.stop()
