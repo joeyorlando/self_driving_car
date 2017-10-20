@@ -18,7 +18,7 @@ class Motor:
 		# pin_right = config["hardware_pins"]["motor"]["right"]
 		# pin_left = config["hardware_pins"]["motor"]["left"]
 
-		for pin in [enable, input1, input2]:
+		for pin in [enable, pin_backward, pin_forward]:
 			GPIO.setup(pin, GPIO.OUT)
 
 		# Pulse width modulation
