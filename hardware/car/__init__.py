@@ -17,11 +17,11 @@ class Car:
 
 
 	def drive_forward(self):
-		self.rear_motor.forward()
+		self.rear_motor.forward(0.1)
 
 
 	def drive_backward(self):
-		self.rear_motor.backward()
+		self.rear_motor.backward(0.1)
 
 
 	def stop(self):
