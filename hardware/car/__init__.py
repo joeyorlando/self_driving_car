@@ -1,7 +1,7 @@
 import RPi.GPIO as GPIO
 from hardware.car.motor import Motor
-from hardware.car.range_sensor import RangeSensor
-from hardware.car.camera import Camera
+from hardware.range_sensor import RangeSensor
+from hardware.camera import Camera
 
 GPIO.setmode(GPIO.BOARD)
 
