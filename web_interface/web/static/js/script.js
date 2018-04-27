@@ -9,7 +9,7 @@ $(document).keydown(function (e) {
 	xmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 	xmlhttp.send(json_upload);
 
-	printKeys();
+	// printKeys();
 });
 
 $(document).keyup(function (e) {
@@ -21,14 +21,14 @@ $(document).keyup(function (e) {
 	xmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 	xmlhttp.send(json_upload);
 
-	printKeys();
+	// printKeys();
 });
 
-function printKeys() {
-	var html = '';
-	for (var i in keys) {
-		if (!keys.hasOwnProperty(i)) continue;
-		html += '<p>' + i + '</p>';
-	}
-	$('#out').html(html);
-}
+// function printKeys() {
+// 	var html = '';
+// 	for (var i in keys) {
+// 		if (!keys.hasOwnProperty(i)) continue;
+// 		html += '<p>' + i + '</p>';
+// 	}
+// 	$('#out').html(html);
+// }

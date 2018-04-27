@@ -3,6 +3,12 @@ This repository houses all of the software/instructions, as well as schematics, 
 
 All of the software in this project (except for a smidgeon of HTML/CSS/JS) is Python 3.6.0.
 
+## Running the web server
+**Note**: because this uses the `picamera` module, this will likely only run on the rasperry pi.
+```
+make run-web-server
+```
+
 ##Things you'll need
 Below is the list of parts that I used to make this project happen.
 #### Hardware/Electrical

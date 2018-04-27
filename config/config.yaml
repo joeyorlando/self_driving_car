@@ -1,5 +1,3 @@
-config: test
-
 hardware_pins:
   rear_motor:
     enable: 22
