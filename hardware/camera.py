@@ -4,7 +4,7 @@ import threading
 import picamera
 
 
-class Camera(object):
+class Camera:
 	"""
 		https://github.com/miguelgrinberg/flask-video-streaming/blob/v1/camera_pi.py
 	"""
@@ -30,8 +30,9 @@ class Camera(object):
 
 	def stream(self):
 		while True:
-      frame = self.get_frame()
-      yield (b'--frame\r\n'b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n')
+    	frame = self.get_frame()
+			yield (b'--frame\r\n'
+						b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n')
 
 	@classmethod
 	def _thread(cls):
