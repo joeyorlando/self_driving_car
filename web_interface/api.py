@@ -2,9 +2,8 @@ import os
 from flask import Flask, request, render_template, Response
 from hardware.car import Car
 
-web_folder = os.path.abspath(os.path.join(os.path.dirname(__file__), '../web'))
-template_folder = "%s/templates" % web_folder
-static_folder = "%s/static" % web_folder
+template_folder = os.path.abspath(os.path.join(os.path.dirname(__file__), './templates'))
+static_folder = os.path.abspath(os.path.join(os.path.dirname(__file__), './static'))
 
 api = Flask(__name__, template_folder=template_folder, static_folder=static_folder)
 car = Car()
