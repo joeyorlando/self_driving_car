@@ -14,7 +14,7 @@ car = Car()
 def get_webpage():
 	return render_template('index.html')
 
-@api.route("/video_feed", mtehods=["GET"])
+@api.route("/video_feed", methods=["GET"])
 def get_video_stream():
 	"""
 		https://blog.miguelgrinberg.com/post/video-streaming-with-flask
