@@ -2,15 +2,20 @@ import RPi.GPIO as GPIO
 from hardware.motor import Motor
 from hardware.range_sensor import RangeSensor
 from hardware.camera import Camera
-
-GPIO.setmode(GPIO.BOARD)
+from hardware.blinker import Blinker
 
 
 class Car:
 
 	def __init__(self):
+		GPIO.setmode(GPIO.BCM)
+
 		self.rear_motor = Motor(motor_type="rear_motor")
 		self.front_motor = Motor(motor_type="front_motor")
+		
+		self.front_right_blinker = Blinker()
+		self.fron_left_blinker = Blinker()		
+		
 		self.range_sensor = RangeSensor()
 		self.camera = Camera()
 
@@ -19,6 +24,12 @@ class Car:
 
 	def drive_backward(self):
 		self.rear_motor.backward(0.1)
+
+	def turn_left(self):
+		pass
+
+	def turn_right(self):
+		pass
 
 	def stop(self):
 		self.rear_motor.stop()
