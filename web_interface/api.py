@@ -21,7 +21,7 @@ def get_video_stream():
 	"""
 		https://blog.miguelgrinberg.com/post/video-streaming-with-flask
 	"""
-	return Response(car.camera.stream(output_data_file_name), mimetype="multipart/x-mixed-replace; boundary=frame")
+	return Response(car.camera.stream(output_data_folder_name), mimetype="multipart/x-mixed-replace; boundary=frame")
 
 @api.route("/drive", methods=["POST"])
 def drive_the_car():
