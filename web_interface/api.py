@@ -1,5 +1,5 @@
 import os
-from flask import Flask, request, render_template, Response
+from flask import Flask, request, render_template, Response, jsonify
 from hardware.car import Car
 
 template_folder = os.path.abspath(os.path.join(os.path.dirname(__file__), './templates'))
@@ -35,6 +35,8 @@ def drive_the_car():
 		car.backward(100)
 	else:
 		car.stop()
+
+	return 'Ok'
 
 @api.route("/store_logs", methods=["GET"])
 def store_logs():
