@@ -31,8 +31,8 @@ class Camera:
 	def stream(self, save_data=False):
 		while True:
 			frame = self.get_frame()
-			if save_data:
-				print('SHOULD SAVE DATA HERE')
+			# if save_data:
+			# 	print('SHOULD SAVE DATA HERE')
 			yield (b'--frame\r\n'
 						b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n')
 
