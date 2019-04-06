@@ -1,39 +1,41 @@
 var keys = {};
 
 const makeDriveCall = () => {
-  fetch('http://192.168.2.171:5001/drive', {
-    method: 'POST',
-    headers: new Headers({
-      'Content-Type': 'application/json',
-    }),
-    body: JSON.stringify({command: keys})
-  });
+	fetch('http://192.168.2.171:5001/drive', {
+		method: 'POST',
+		headers: new Headers({
+			'Content-Type': 'application/json',
+		}),
+		body: JSON.stringify({
+			command: keys
+		})
+	});
 };
 
 $(document).ready(() => {
-  $(document).keydown(e => {
-    keys[e.which] = true;
-    makeDriveCall();
-  });
+	$(document).keydown(e => {
+		keys[e.which] = true;
+		makeDriveCall();
+	});
 
-  $(document).keyup(e => {
-    delete keys[e.which];
-    makeDriveCall();
-  });
+	$(document).keyup(e => {
+		delete keys[e.which];
+		makeDriveCall();
+	});
 
-  $('#record').click(function() {
-    const isRecording = $(this).text() === 'Stop Recording';
-    let newVal;
+	$('#record').click(function () {
+		const isRecording = $(this).val() === 'Stop Recording';
+		let newVal;
 
-    console.log('YOOOO', $(this).text());
+		console.log('YOOOO', $(this).val());
 
-    if (isRecording) {
-      // Make API call here...
-      newVal = 'Start Recording';
-    } else {
-      // Make API call here...
-      newVal = 'Stop Recording';
-    }
-    $(this).text(newVal);
-  });
+		if (isRecording) {
+			// Make API call here...
+			newVal = 'Start Recording';
+		} else {
+			// Make API call here...
+			newVal = 'Stop Recording';
+		}
+		$(this).val(newVal);
+	});
 });
