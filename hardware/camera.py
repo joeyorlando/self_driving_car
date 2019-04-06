@@ -28,11 +28,14 @@ class Camera:
 		self.initialize()
 		return self.frame
 
-	def stream(self, save_data=False):
+	def stream(self, output_foldername):
 		while True:
 			frame = self.get_frame()
-			# if save_data:
-			# 	print('SHOULD SAVE DATA HERE')
+
+			# Write the frame out to a file
+			with open("%s/%s.jpg" % (output_foldername, time.time()), 'wb') as fp:
+				fp.write(frame)
+
 			yield (b'--frame\r\n'
 						b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n')
 
@@ -40,7 +43,7 @@ class Camera:
 	def _thread(cls):
 		with picamera.PiCamera() as camera:
 			# camera setup
-			camera.resolution = (320, 240)
+			camera.resolution = (480, 360)
 			camera.hflip = True
 			camera.vflip = False
 
