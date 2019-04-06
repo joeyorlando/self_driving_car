@@ -1,5 +1,6 @@
 bind = "0.0.0.0:5001"
 workers=2
+worker_class="gevent"
 preload = True
 accesslog = "-"
 loglevel = "debug"
