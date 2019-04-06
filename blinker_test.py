@@ -4,7 +4,7 @@ from hardware.blinker import Blinker
 
 GPIO.setmode(GPIO.BOARD)
 
-b = Blinker(4)
-b.start_blinking()
-time.sleep(20)
-b.stop_blinking()
+b = Blinker(7)
+
+for _ in range(5):
+	b.blink()
