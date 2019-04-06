@@ -20,8 +20,7 @@ def get_video_stream():
 		https://blog.miguelgrinberg.com/post/video-streaming-with-flask
 	"""
 	frame = car.camera.stream()
-	data = (b'--frame\r\n'
-						b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n')
+	data = b'--frame\r\nContent-Type: image/jpeg\r\n\r\n' + frame + b'\r\n'
 
 	if recording:
 		print('SHOULD SAVE DATA HERE')

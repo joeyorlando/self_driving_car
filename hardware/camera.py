@@ -30,8 +30,7 @@ class Camera:
 
 	def stream(self):
 		while True:
-			frame = self.get_frame()
-			yield frame
+			yield self.get_frame()
 
 	@classmethod
 	def _thread(cls):
