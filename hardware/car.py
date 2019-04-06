@@ -18,16 +18,16 @@ class Car:
 		self.camera = Camera()
 
 	def drive_forward(self):
-		self.rear_motor.forward(0.9)
+		self.rear_motor.forward(0.1)
 
 	def drive_backward(self):
 		self.rear_motor.backward(0.1)
 
 	def turn_left(self):
-		pass
+		self.front_motor.forward(0.1)
 
 	def turn_right(self):
-		pass
+		self.front_motor.backward(0.1)
 
 	def stop(self):
 		self.rear_motor.stop()
