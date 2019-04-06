@@ -7,6 +7,7 @@ static_folder = os.path.abspath(os.path.join(os.path.dirname(__file__), './stati
 
 api = Flask(__name__, template_folder=template_folder, static_folder=static_folder)
 car = Car()
+recording = False
 
 
 @api.route("/", methods=["GET"])
@@ -36,8 +37,18 @@ def drive_the_car():
 	else:
 		car.stop()
 	
+	print('RECORDING STATUS: %s' % recording)
+
 	return 'Ok'
 
-@api.route("/store_logs", methods=["GET"])
-def store_logs():
-	pass
+@api.route("/start_recording", methods=["POST"])
+def start_recording():
+	global recording
+	recording = True
+	return 'Ok'
+
+@api.route("/stop_recording", methods=["POST"])
+def stop_recording():
+	global recording
+	recording = False
+	return 'Ok'
