@@ -8,7 +8,7 @@ from hardware.blinker import Blinker
 class Car:
 
 	def __init__(self):
-		GPIO.setmode(GPIO.BCM)
+		GPIO.setmode(GPIO.BOARD)
 
 		self.rear_motor = Motor(motor_type="rear_motor")
 		self.front_motor = Motor(motor_type="front_motor")
