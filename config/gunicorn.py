@@ -1,7 +1,5 @@
-import multiprocessing
-
 bind = "0.0.0.0:5001"
-workers = (multiprocessing.cpu_count() * 2) + 1 #"rule of thumb"
+workers=2
 preload = True
 accesslog = "-"
 loglevel = "INFO"

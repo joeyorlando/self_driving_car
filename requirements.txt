@@ -8,11 +8,12 @@ h2o==3.10.4.2
 itsdangerous==0.24
 Jinja2==2.9.5
 MarkupSafe==1.0
-numpy==1.12.1
-opencv-python==3.2.0.6
-protobuf==3.2.0
+#numpy==1.12.1
+#opencv-python==3.2.0.6
+#protobuf==3.2.0
+PyYAML==3.11
 requests==2.13.0
 six==1.10.0
 tabulate==0.7.7
-tensorflow==1.0.0
+#tensorflow==1.0.0
 Werkzeug==0.12.1
