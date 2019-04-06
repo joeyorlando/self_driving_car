@@ -26,16 +26,16 @@ def drive_the_car():
 	command = request_body.get("command")
 
 	if '37' in command:
-		car.forward_left(100)
+		car.turn_left()
 	elif '38' in command:
-		car.forward(100)
+		car.drive_forward()
 	elif '39' in command:
-		car.forward_right(100)
+		car.turn_right()
 	elif '40' in command:
-		car.backward(100)
+		car.drive_backward()
 	else:
 		car.stop()
-
+	
 	return 'Ok'
 
 @api.route("/store_logs", methods=["GET"])
