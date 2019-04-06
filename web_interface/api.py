@@ -11,8 +11,8 @@ car = Car()
 recording = False
 output_data_folder_name = "./data/training/%s" % time.time()
 
-os.system('mkdir %s' output_data_folder_name)
-print('FOLDER NAME IS %s' % output_data_folder_name)
+os.system("mkdir %s" % output_data_folder_name)
+print("FOLDER NAME IS %s" % output_data_folder_name)
 
 
 @api.route("/", methods=["GET"])
