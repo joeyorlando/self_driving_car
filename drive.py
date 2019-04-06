@@ -8,10 +8,11 @@ car = Car()
 
 print("TURN LEFT")
 car.turn_left()
-sleep(10)
+sleep(3)
 
 print("TURN RIGHT")
 car.turn_right()
+sleep(3)
 
 print("STOP")
 car.stop()
