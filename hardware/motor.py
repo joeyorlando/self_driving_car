@@ -38,8 +38,8 @@ class Motor:
 		GPIO.output(self.pin_backward, GPIO.HIGH)
 		GPIO.output(self.pin_forward, GPIO.LOW)
 		GPIO.output(self.enable, GPIO.HIGH)
-		self.pwm_backward.ChangeDutyCycle(0)
-		self.pwm_forward.ChangeDutyCycle(speed)
+		# self.pwm_backward.ChangeDutyCycle(0)
+		# self.pwm_forward.ChangeDutyCycle(speed)
 
 
 	# def forward_left(self, speed):
@@ -69,8 +69,8 @@ class Motor:
 		GPIO.output(self.pin_forward, GPIO.LOW)
 		GPIO.output(self.pin_backward, GPIO.HIGH)
 		GPIO.output(self.enable, GPIO.HIGH)
-		self.pwm_forward.ChangeDutyCycle(0)
-		self.pwm_backward.ChangeDutyCycle(speed)
+		# self.pwm_forward.ChangeDutyCycle(0)
+		# self.pwm_backward.ChangeDutyCycle(speed)
 
 
 	# def left(self, speed):
@@ -91,8 +91,10 @@ class Motor:
 
 	def stop(self):
 		""" Set the duty cycle of both control pins to zero to stop the motor. """
+		GPIO.output(self.pin_forward, GPIO.LOW)
+		GPIO.output(self.pin_backward, GPIO.LOW)
 		GPIO.output(self.enable, GPIO.LOW)
-		self.pwm_forward.ChangeDutyCycle(0)
-		self.pwm_backward.ChangeDutyCycle(0)
+		# self.pwm_forward.ChangeDutyCycle(0)
+		# self.pwm_backward.ChangeDutyCycle(0)
 		# self.pwm_left.ChangeDutyCycle(0)
 		# self.pwm_right.ChangeDutyCycle(0)
