@@ -28,9 +28,13 @@ class Camera:
 		self.initialize()
 		return self.frame
 
-	def stream(self):
+	def stream(self, save_data=False):
 		while True:
-			yield self.get_frame()
+			frame = self.get_frame()
+			if save_data:
+				print('SHOULD SAVE DATA HERE')
+			yield (b'--frame\r\n'
+						b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n')
 
 	@classmethod
 	def _thread(cls):

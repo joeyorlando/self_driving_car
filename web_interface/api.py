@@ -19,13 +19,7 @@ def get_video_stream():
 	"""
 		https://blog.miguelgrinberg.com/post/video-streaming-with-flask
 	"""
-	frame = car.camera.stream()
-	data = b'--frame\r\nContent-Type: image/jpeg\r\n\r\n' + frame + b'\r\n'
-
-	if recording:
-		print('SHOULD SAVE DATA HERE')
-
-	return Response(data, mimetype="multipart/x-mixed-replace; boundary=frame")
+	return Response(car.camera.stream(recording), mimetype="multipart/x-mixed-replace; boundary=frame")
 
 @api.route("/drive", methods=["POST"])
 def drive_the_car():
