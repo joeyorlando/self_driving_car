@@ -9,7 +9,7 @@ static_folder = os.path.abspath(os.path.join(os.path.dirname(__file__), './stati
 api = Flask(__name__, template_folder=template_folder, static_folder=static_folder)
 car = Car()
 recording = False
-output_data_folder_name = "./data/training/%s" % time.time()
+output_data_folder_name = "./data/training/%s" % int(time.time())
 
 os.system("mkdir %s" % output_data_folder_name)
 print("FOLDER NAME IS %s" % output_data_folder_name)

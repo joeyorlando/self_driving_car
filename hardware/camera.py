@@ -33,7 +33,7 @@ class Camera:
 			frame = self.get_frame()
 
 			# Write the frame out to a file
-			with open("%s/%s.jpg" % (output_foldername, time.time()), 'wb') as fp:
+			with open("%s/%s.jpg" % (output_foldername, int(time.time())), 'wb') as fp:
 				fp.write(frame)
 
 			yield (b'--frame\r\n'
