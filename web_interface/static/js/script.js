@@ -1,42 +1,25 @@
 var keys = {};
 
-$(document).keydown(function (e) {
-	keys[e.which] = true;
+const makeDriveCall = () => {
+  fetch('http://192.168.2.171:5001/drive', {
+    method: 'POST',
+    headers: new Headers({
+      'Content-Type': 'application/json',
+    }),
+    body: {command: keys}
+  });
+};
 
-	console.log(keys);
-
-	var json_upload = JSON.stringify({
-		command: keys
-	});
-	var xmlhttp = new XMLHttpRequest();
-	xmlhttp.open('POST', 'http://192.168.2.171:5001/drive');
-	xmlhttp.setRequestHeader('Content-Type', 'application/json');
-	xmlhttp.send(json_upload);
-
-	// printKeys();
+$(document).keydown(e => {
+  keys[e.which] = true;
+  makeDriveCall();
 });
 
-$(document).keyup(function (e) {
-	delete keys[e.which];
-
-	console.log(keys);
-
-	var json_upload = JSON.stringify({
-		command: keys
-	});
-	var xmlhttp = new XMLHttpRequest();
-	xmlhttp.open('POST', 'http://192.168.2.171:5001/drive');
-	xmlhttp.setRequestHeader('Content-Type', 'application/json');
-	xmlhttp.send(json_upload);
-
-	// printKeys();
+$(document).keyup(e => {
+  delete keys[e.which];
+  makeDriveCall();
 });
 
-// function printKeys() {
-// 	var html = '';
-// 	for (var i in keys) {
-// 		if (!keys.hasOwnProperty(i)) continue;
-// 		html += '<p>' + i + '</p>';
-// 	}
-// 	$('#out').html(html);
-// }
+$('#record').click(e => {
+  $(this).attr('Value', 'Stop Recording');
+});

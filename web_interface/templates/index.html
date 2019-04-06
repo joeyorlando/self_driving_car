@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-		<script src="../static/js/script.js"></script>
-	</head>
-	<body>
-		<img src="{{ url_for('get_video_stream') }}">
-	</body>
+
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+	<script src="../static/js/script.js"></script>
+</head>
+
+<body>
+	<img src="{{ url_for('get_video_stream') }}">
+	<button id="record">Start recording</button>
+</body>
+
 </html>
