@@ -19,7 +19,14 @@ def get_video_stream():
 	"""
 		https://blog.miguelgrinberg.com/post/video-streaming-with-flask
 	"""
-	return Response(car.camera.stream(), mimetype="multipart/x-mixed-replace; boundary=frame")
+	frame = car.camera.stream()
+	data = (b'--frame\r\n'
+						b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n')
+
+	if recording:
+		print('SHOULD SAVE DATA HERE')
+
+	return Response(data, mimetype="multipart/x-mixed-replace; boundary=frame")
 
 @api.route("/drive", methods=["POST"])
 def drive_the_car():
@@ -36,8 +43,6 @@ def drive_the_car():
 		car.drive_backward()
 	else:
 		car.stop()
-	
-	print('RECORDING STATUS: %s' % recording)
 
 	return 'Ok'
 

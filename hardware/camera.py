@@ -31,8 +31,7 @@ class Camera:
 	def stream(self):
 		while True:
 			frame = self.get_frame()
-			yield (b'--frame\r\n'
-						b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n')
+			yield frame
 
 	@classmethod
 	def _thread(cls):
