@@ -94,5 +94,5 @@ class Motor:
 		GPIO.output(self.enable, GPIO.LOW)
 		self.pwm_forward.ChangeDutyCycle(0)
 		self.pwm_backward.ChangeDutyCycle(0)
-		self.pwm_left.ChangeDutyCycle(0)
-		self.pwm_right.ChangeDutyCycle(0)
+		# self.pwm_left.ChangeDutyCycle(0)
+		# self.pwm_right.ChangeDutyCycle(0)

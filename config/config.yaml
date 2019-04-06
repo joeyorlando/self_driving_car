@@ -1,12 +1,12 @@
 hardware_pins:
   rear_motor:
+    input1: 16
+    input2: 18
     enable: 22
-    input1: 18
-    input2: 16
   front_motor:
+    input1: 29
+    input2: 31
     enable: 33
-    input1: 31
-    input2: 29
   range_sensor:
     trig: 3
     echo: 5
