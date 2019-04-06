@@ -8,8 +8,8 @@ class Motor:
 
 	def __init__(self, motor_type):
 		self.enable = config["hardware_pins"][motor_type]["enable"]
-		self.pin_backward = config["hardware_pins"][motor_type]["input2"]
-		self.pin_forward = config["hardware_pins"][motor_type]["input1"]
+		self.pin_backward = config["hardware_pins"][motor_type]["input1"]
+		self.pin_forward = config["hardware_pins"][motor_type]["input2"]
 
 		# pin_forward = config["hardware_pins"]["motor"]["forward"]
 		# pin_backward = config["hardware_pins"]["motor"]["backward"]
