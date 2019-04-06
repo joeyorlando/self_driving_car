@@ -22,10 +22,10 @@ $(document).ready(() => {
   });
 
   $('#record').click(function() {
-    const isRecording = $(this).val() === 'Stop Recording';
+    const isRecording = $(this).text() === 'Stop Recording';
     let newVal;
 
-    console.log('YOOOO', $(this).val());
+    console.log('YOOOO', $(this).text());
 
     if (isRecording) {
       // Make API call here...
@@ -34,6 +34,6 @@ $(document).ready(() => {
       // Make API call here...
       newVal = 'Stop Recording';
     }
-    $(this).attr('value', newVal);
+    $(this).text(newVal);
   });
 });
