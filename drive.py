@@ -6,9 +6,12 @@ from hardware.car import Car
 GPIO.setmode(GPIO.BOARD)
 car = Car()
 
-print("FORWARD MOTION")
-car.drive_forward()
+print("TURN LEFT")
+car.turn_left()
 sleep(10)
+
+print("TURN RIGHT")
+car.turn_right()
 
 print("STOP")
 car.stop()
