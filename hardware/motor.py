@@ -22,13 +22,13 @@ class Motor:
 			GPIO.setup(pin, GPIO.OUT)
 
 		# Pulse width modulation
-		self.pwm_forward = GPIO.PWM(self.pin_forward, 100)
-		self.pwm_backward = GPIO.PWM(self.pin_backward, 100)
+		# self.pwm_forward = GPIO.PWM(self.pin_forward, 100)
+		# self.pwm_backward = GPIO.PWM(self.pin_backward, 100)
 
-		for pwm in [self.pwm_forward, self.pwm_backward]:
-			pwm.start(0)
+		# for pwm in [self.pwm_forward, self.pwm_backward]:
+		# 	pwm.start(0)
 
-		GPIO.output(self.enable, GPIO.HIGH)
+		# GPIO.output(self.enable, GPIO.HIGH)
 
 
 	def forward(self, speed):
