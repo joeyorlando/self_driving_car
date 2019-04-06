@@ -11,14 +11,14 @@ class Car:
 		self.rear_motor = Motor(motor_type="rear_motor")
 		self.front_motor = Motor(motor_type="front_motor")
 		
-		self.front_right_blinker = Blinker()
-		self.fron_left_blinker = Blinker()		
+		self.front_right_blinker = Blinker(7)
+		self.fron_left_blinker = Blinker(11)		
 		
 		self.range_sensor = RangeSensor()
 		self.camera = Camera()
 
 	def drive_forward(self):
-		self.rear_motor.forward(0.1)
+		self.rear_motor.forward(0.9)
 
 	def drive_backward(self):
 		self.rear_motor.backward(0.1)

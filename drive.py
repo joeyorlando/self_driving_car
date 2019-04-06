@@ -3,7 +3,7 @@ from time import sleep
 from hardware.car import Car
 
 
-GPIO.setmode(GPIO.BCM)
+GPIO.setmode(GPIO.BOARD)
 car = Car()
 
 print("FORWARD MOTION")
