@@ -36,16 +36,24 @@ def drive_the_car():
     request_body = request.get_json()
     command = request_body.get("command")
 
-    if '37' in command:
+		left_arrow = '37'
+		right_arrow = '39'
+		up_arrow = '38'
+		down_arrow = '40'
+		keys = [left_arrow, right_arrow, up_arrow, down_arrow]
+
+    if left_arrow in command:
         car.turn_left()
-    elif '38' in command:
-        car.drive_forward()
-    elif '39' in command:
+		elif right_arrow in command:
         car.turn_right()
-    elif '40' in command:
+
+    if up_arrow in command:
+        car.drive_forward()
+    elif down_arrow in command:
         car.drive_backward()
-    else:
-        car.stop()
+
+		if not any([k in command for k in keys]):
+      car.stop()
 
     return 'Ok'
 
