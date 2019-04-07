@@ -1,7 +1,10 @@
 import os
 import time
+import RPi.GPIO as GPIO
 from flask import Flask, request, render_template, Response, jsonify
 from hardware.car import Car
+
+GPIO.setmode(GPIO.BOARD)
 
 template_folder = os.path.abspath(os.path.join(
     os.path.dirname(__file__), './templates'))
@@ -36,15 +39,15 @@ def drive_the_car():
     request_body = request.get_json()
     command = request_body.get("command")
 
-		left_arrow = '37'
-		right_arrow = '39'
-		up_arrow = '38'
-		down_arrow = '40'
-		keys = [left_arrow, right_arrow, up_arrow, down_arrow]
+    left_arrow = '37'
+    right_arrow = '39'
+    up_arrow = '38'
+    down_arrow = '40'
+    keys = [left_arrow, right_arrow, up_arrow, down_arrow]
 
     if left_arrow in command:
         car.turn_left()
-		elif right_arrow in command:
+    elif right_arrow in command:
         car.turn_right()
 
     if up_arrow in command:
@@ -52,8 +55,8 @@ def drive_the_car():
     elif down_arrow in command:
         car.drive_backward()
 
-		if not any([k in command for k in keys]):
-      car.stop()
+    if not any([k in command for k in keys]):
+        car.stop()
 
     return 'Ok'
 

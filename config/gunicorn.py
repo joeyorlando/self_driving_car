@@ -1,6 +1,6 @@
 bind = "0.0.0.0:5001"
-workers=1
-threads=10
+workers = 1
+threads = 10
 # worker_class="gevent" NOTE: to use async worker framework need to make some changes to Camera class code... https://blog.miguelgrinberg.com/post/flask-video-streaming-revisited
 preload = True
 accesslog = "-"

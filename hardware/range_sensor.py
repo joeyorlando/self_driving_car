@@ -1,7 +1,6 @@
 import time
 import RPi.GPIO as GPIO
 from lib.config import config
-GPIO.setmode(GPIO.BOARD)
 
 
 class RangeSensor:
