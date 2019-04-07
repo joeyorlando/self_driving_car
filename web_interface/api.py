@@ -44,8 +44,8 @@ def drive_the_car():
         car.turn_right()
     elif '40' in command:
         car.drive_backward()
-    # else:
-    # 	car.stop()
+    else:
+        car.stop()
 
     return 'Ok'
 
