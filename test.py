@@ -7,16 +7,16 @@ Motor1A = 33
 Motor1B = 31
 Motor1E = 29
 
-GPIO.setup(Motor1A,GPIO.OUT)
-GPIO.setup(Motor1B,GPIO.OUT)
-GPIO.setup(Motor1E,GPIO.OUT)
+GPIO.setup(Motor1A, GPIO.OUT)
+GPIO.setup(Motor1B, GPIO.OUT)
+GPIO.setup(Motor1E, GPIO.OUT)
 
-GPIO.output(Motor1A,GPIO.HIGH)
-GPIO.output(Motor1B,GPIO.LOW)
-GPIO.output(Motor1E,GPIO.HIGH)
+GPIO.output(Motor1A, GPIO.HIGH)
+GPIO.output(Motor1B, GPIO.LOW)
+GPIO.output(Motor1E, GPIO.HIGH)
 
-sleep(0.5)
+sleep(5)
 
-GPIO.output(Motor1E,GPIO.LOW)
+GPIO.output(Motor1E, GPIO.LOW)
 
 GPIO.cleanup()
